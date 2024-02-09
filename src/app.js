@@ -8,11 +8,16 @@ function refreshWeather (response) {
     let timeElement = document.querySelector("#time");
     let date = new Date (response.data.time * 1000); 
 
+    let iconElement = document.querySelector("icon#"); 
+    
+    iconElement.innerHTML = `<img src="${response.data.condition.icon.url}" class="weather-app-emoji" />`;
+
     console.log(response.data)
 
     timeElement.innerHTML = formatDate(date);
 
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
     temperatureElement.innerHTML = Math.round(temperature);

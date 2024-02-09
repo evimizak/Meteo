@@ -32,7 +32,8 @@ a {
     color: #f65282
 }
 
-.weather-app-temperature {
+.weather-app-temperature-container {
+    display: flex;
     font-size: 38px;
     line-height: 48px;
 
